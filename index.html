@@ -11,14 +11,14 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            background-color: #fff4f9; /* Light pink background */
             color: #333;
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            background: linear-gradient(135deg, #ff7eb3, #ff65a3); /* Pink gradient */
             color: white;
             display: flex;
             flex-direction: column;
@@ -42,7 +42,7 @@
             margin-top: 20px;
             padding: 15px 30px;
             background: white;
-            color: #6a11cb;
+            color: #ff65a3;
             font-weight: bold;
             text-decoration: none;
             border-radius: 50px;
@@ -50,8 +50,8 @@
         }
 
         .hero a:hover {
-            background: #fff;
-            color: #2575fc;
+            background: #ffe3ed; /* Light pink hover effect */
+            color: #ff2f78;
             transform: scale(1.05);
         }
 
@@ -59,7 +59,7 @@
         nav {
             position: sticky;
             top: 0;
-            background: #333;
+            background: #ff7eb3;
             padding: 10px 0;
             text-align: center;
             z-index: 100;
@@ -75,7 +75,7 @@
         }
 
         nav a:hover {
-            background: #6a11cb;
+            background: #ff4d90; /* Darker pink hover effect */
             border-radius: 5px;
         }
 
@@ -94,7 +94,7 @@
         section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #6a11cb;
+            color: #ff65a3; /* Pink color for section titles */
         }
 
         /* Projects Grid */
@@ -114,10 +114,11 @@
 
         .project:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(255, 102, 163, 0.3); /* Pink shadow on hover */
         }
 
         .project h3 {
-            color: #2575fc;
+            color: #ff4d90; /* Pink project titles */
             margin: 0;
         }
 
@@ -129,7 +130,7 @@
         .project a {
             display: inline-block;
             margin-top: 10px;
-            color: #6a11cb;
+            color: #ff65a3;
             text-decoration: none;
             font-weight: bold;
         }
@@ -148,12 +149,14 @@
             border-radius: 50px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             font-weight: bold;
-            color: #6a11cb;
+            color: #ff65a3;
             transition: transform 0.3s;
         }
 
         .skill:hover {
             transform: translateY(-5px);
+            background: #ffe3ed; /* Light pink hover effect */
+            color: #ff4d90;
         }
 
         /* Contact Section */
@@ -161,7 +164,7 @@
             display: inline-block;
             margin: 10px;
             padding: 15px 30px;
-            background: #6a11cb;
+            background: #ff65a3;
             color: white;
             font-weight: bold;
             text-decoration: none;
@@ -170,13 +173,13 @@
         }
 
         .contact a:hover {
-            background: #2575fc;
+            background: #ff4d90; /* Darker pink hover effect */
         }
 
         footer {
             text-align: center;
             padding: 20px;
-            background: #333;
+            background: #ff7eb3;
             color: white;
             margin-top: 40px;
         }
@@ -214,7 +217,6 @@
                     <p>Description of your second project. Showcase what you built or achieved.</p>
                     <a href="#">View Project</a>
                 </div>
-                <!-- Add more projects as needed -->
             </div>
         </section>
     </div>
@@ -226,7 +228,6 @@
                 <div class="skill">R</div>
                 <div class="skill">Machine Learning</div>
                 <div class="skill">Data Analysis</div>
-                <!-- Add more skills as needed -->
             </div>
         </section>
     </div>
@@ -245,5 +246,4 @@
     </footer>
 </body>
 </html>
-              
 
