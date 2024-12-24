@@ -127,60 +127,46 @@
             margin: 10px 0;
         }
 
-        .project a {
-            display: inline-block;
-            margin-top: 10px;
-            color: #ff9a9e;
-            text-decoration: none;
-            font-weight: bold;
+        /* Modal Styling */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8); /* Dim background */
         }
 
-        /* Skills */
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .skill {
-            background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Gradient for skills */
-            padding: 15px 30px;
-            border-radius: 50px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            font-weight: bold;
-            color: white;
-            transition: transform 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-            background: linear-gradient(135deg, #ff4d90, #ff9a9e); /* Darker gradient on hover */
-        }
-
-        /* Contact Section */
-        .contact a {
-            display: inline-block;
-            margin: 10px;
-            padding: 15px 30px;
-            background: linear-gradient(90deg, #ff9a9e, #ff4d90);
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: 0.3s;
-        }
-
-        .contact a:hover {
-            background: #ff4d90; /* Darker pink hover effect */
-        }
-
-        footer {
-            text-align: center;
+        .modal-content {
+            background: white;
+            margin: 10% auto;
             padding: 20px;
-            background: linear-gradient(90deg, #ff9a9e, #ff4d90); /* Pink gradient footer */
-            color: white;
-            margin-top: 40px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .modal .close:hover {
+            color: #ff4d90;
+        }
+
+        embed {
+            width: 100%;
+            height: 500px;
+            border: none;
         }
     </style>
 </head>
@@ -199,7 +185,7 @@
     <div id="about" class="content">
         <section>
             <h2>About Me</h2>
-            <p>I recently graduated with a Bachelor's degree in Biology and am now pursuing a Master's in Bioinformatics and Computational Biology at the University of Maryland, where I am excited to further explore enhancingfef further my knowledge and skills in the intersection of biology, computer science, and data analysis</p>
+            <p>I recently graduated with a Bachelor's degree in Biology and am now pursuing a Master's in Bioinformatics and Computational Biology at the University of Maryland.</p>
         </section>
     </div>
     <div id="projects" class="content">
@@ -207,41 +193,39 @@
             <h2>Projects</h2>
             <div class="projects">
                 <div class="project">
-                    <h3>Project 1</h3>
-                    <p>This project analyzes the correlation between obesity and type 2 diabetes in Black and Latin communities. Using datasets from the American Community Survey and R programming, it highlights patterns and differences in these demographics.</p>
-                    <embed src="Obesity_Diabetes_relationship_project.pdf" width="100%" height="500">
-                </div>
-                <div class="project">
-                    <h3>Project 2</h3>
-                    <p>Description of your second project. Showcase what you built or achieved.</p>
-                    <a href="#">View Project</a>
+                    <h3>Exploring the Obesity-Diabetes Relationship</h3>
+                    <p>This project analyzes the correlation between obesity and type 2 diabetes in Black and Latin communities.</p>
+                    <button onclick="openModal()">View Project</button>
                 </div>
             </div>
         </section>
     </div>
-    <div id="skills" class="content">
-        <section>
-            <h2>Skills</h2>
-            <div class="skills">
-                <div class="skill">Python</div>
-                <div class="skill">R</div>
-                <div class="skill">Machine Learning</div>
-                <div class="skill">Data Analysis</div>
-            </div>
-        </section>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Exploring the Obesity-Diabetes Relationship</h3>
+            <embed src="Obesity_Diabetes_relationship_project.pdf"></embed>
+        </div>
     </div>
-    <div id="contact" class="content">
-        <section>
-            <h2>Contact</h2>
-            <p>Feel free to reach out via email or connect with me on LinkedIn!</p>
-            <div class="contact">
-                <a href="mailto:your.email@example.com">Email Me</a>
-                <a href="#">LinkedIn</a>
-            </div>
-        </section>
-    </div>
-    <footer>
-        <p>© Manuela Deigh️</p>
-    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById("projectModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("projectModal").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById("projectModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
+
